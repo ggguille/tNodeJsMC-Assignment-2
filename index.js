@@ -41,6 +41,13 @@ handlerManager.addHandler(new CreateTokenHandler(modelDataProvider));
 const DeleteTokenHandler = require('./lib/handlers/tokens/deleteTokenHandler');
 handlerManager.addHandler(new DeleteTokenHandler(modelDataProvider));
 
+// Product handlers
+const ListProductsHandler = require('./lib/handlers/products/listProductsHandler');
+handlerManager.addHandler(
+    new ListProductsHandler(modelDataProvider),
+    AuthoritationMiddleware.getName()
+);
+
 // Instantiate HTTP request handler manager
 
 // Instantiate HTTP server
