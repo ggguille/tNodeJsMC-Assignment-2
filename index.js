@@ -1,11 +1,10 @@
 /**
- * Homework Assignment #1
+ * Homework Assignment #2
  * Main file
  */
 'use strict';
 
 // Dependencies
-const fs = require('fs');
 const config = require('./lib/config');
 const HttpServer = require('./lib/server/httpServer');
 const HandlerManager = require('./lib/server/httpRequestHandler').HandlerManager;
