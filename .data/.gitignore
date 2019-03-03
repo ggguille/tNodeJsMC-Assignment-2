@@ -3,3 +3,6 @@ users/*
 
 tokens/*
 !tokens/.gitkeep
+
+carts/*
+!carts/.gitkeep
