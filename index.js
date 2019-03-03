@@ -48,7 +48,12 @@ handlerManager.addHandler(
     AuthoritationMiddleware.getName()
 );
 
-// Instantiate HTTP request handler manager
+// Cart handlers
+const AddToCartHandler = require('./lib/handlers/carts/addToCartHandler');
+handlerManager.addHandler(
+    new AddToCartHandler(modelDataProvider),
+    AuthoritationMiddleware.getName()
+);
 
 // Instantiate HTTP server
 const httpServer = new HttpServer.Builder('http')
