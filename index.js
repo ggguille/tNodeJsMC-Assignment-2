@@ -54,6 +54,11 @@ handlerManager.addHandler(
     new AddToCartHandler(modelDataProvider),
     AuthoritationMiddleware.getName()
 );
+const DeleteFromCartHandler = require('./lib/handlers/carts/deleteFromCartHandler');
+handlerManager.addHandler(
+    new DeleteFromCartHandler(modelDataProvider),
+    AuthoritationMiddleware.getName()
+);
 
 // Instantiate HTTP server
 const httpServer = new HttpServer.Builder('http')
