@@ -23,6 +23,11 @@ handlerManager.addMiddleware(new AuthoritationMiddleware(modelDataProvider));
 // User handlers
 const CreateUserHandler = require('./lib/handlers/users/createUserHandler');
 handlerManager.addHandler(new CreateUserHandler(modelDataProvider));
+const ProfileUserHandler = require('./lib/handlers/users/profileUserHandler');
+handlerManager.addHandler(
+    new ProfileUserHandler(modelDataProvider),
+    AuthoritationMiddleware.getName()
+);
 const EditUserHandler = require('./lib/handlers/users/editUserHandler');
 handlerManager.addHandler(
     new EditUserHandler(modelDataProvider),
