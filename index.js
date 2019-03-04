@@ -53,6 +53,11 @@ handlerManager.addHandler(
 );
 
 // Cart handlers
+const GetCartUserHandler = require('./lib/handlers/carts/getCartUserHandler');
+handlerManager.addHandler(
+    new GetCartUserHandler(modelDataProvider),
+    AuthoritationMiddleware.getName()
+);
 const AddToCartHandler = require('./lib/handlers/carts/addToCartHandler');
 handlerManager.addHandler(
     new AddToCartHandler(modelDataProvider),
